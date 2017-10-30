@@ -1,0 +1,19 @@
+{
+  "name": "escape",
+  "version": "1.0.0",
+  "description": "escape app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maaxow/escape.git"
+  },
+  "author": "maaxow",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/maaxow/escape/issues"
+  },
+  "homepage": "https://github.com/maaxow/escape#readme"
+}
