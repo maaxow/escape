@@ -4,6 +4,7 @@
   "description": "escape app",
   "main": "server.js",
   "scripts": {
+    "prestart": "npm install",
     "start": "node server.js"
   },
   "repository": {
