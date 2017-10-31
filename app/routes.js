@@ -1,9 +1,9 @@
 var path = require('path');
-var Money = require('./models/money');
-var MoneyType = require('../config/constants');
+var Histories = require('./models/history');
+// var MoneyType = require('../config/constants');
 
-function getMoney(res){
-  Money.find(function(err, money){
+function getHistory(res){
+  Histories.find(function(err, money){
     if(err){
       res.send(err);
     }
@@ -13,10 +13,10 @@ function getMoney(res){
 
 function getMoneySpecific(res, config){
   var nbTotal = 0;
-  Money.count(function(arr, money){
+  Histories.count(function(arr, money){
     nbTotal = money;
   });
-  Money.find(function(err, money){
+  Histories.find(function(err, money){
     // console.log("money", money);
     if(err){
       res.send(err);
@@ -48,7 +48,7 @@ module.exports = function (app) {
     app.post('/api/money/create', function (req, res) {
 
       console.log("body", req.body);
-      return Money.create(req.body, function(err, money){
+      return Histories.create(req.body, function(err, money){
         //console.log("create money res", req.body, res);
         if(err){
           res.send(err);
@@ -62,7 +62,7 @@ module.exports = function (app) {
       const money_type = req.params.money_type;
 
       try{
-        Money.find({
+        Histories.find({
           type:money_type
         },function(err,res){
           if(err){
@@ -83,7 +83,7 @@ module.exports = function (app) {
 
     // delete a to
     app.delete('/api/money/:money_id', function (req, res) {
-        Money.remove({
+        Histories.remove({
             _id: req.params.money_id
         }, function (err, todo) {
             if (err){
@@ -95,7 +95,7 @@ module.exports = function (app) {
     // Count money
     app.get('/api/money/count/:type_money', function(req, res){
         var type = req.params.type_money;
-        var agg = Money.aggregate();
+        var agg = Histories.aggregate();
         agg.match({type});
         agg.project({
           total: {
