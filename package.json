@@ -1,0 +1,27 @@
+{
+  "name": "escape",
+  "version": "1.0.0",
+  "description": "escape app",
+  "main": "server.js",
+  "scripts": {
+    "prestart": "npm install",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maaxow/escape.git"
+  },
+  "author": "maaxow",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/maaxow/escape/issues"
+  },
+  "homepage": "https://github.com/maaxow/escape#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "method-override": "^2.3.10",
+    "mongoose": "^4.12.5",
+    "morgan": "^1.9.0"
+  }
+}
